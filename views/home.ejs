@@ -1,0 +1,45 @@
+<%- include("partials/header") %>
+
+<br />
+
+<div class="card">
+    <div class="card-content">
+        <p class="title">
+            <h2 class="title is-1">VK Auth App</h2>
+        </p>
+        <p class="subtitle">
+            <br />
+            
+            <p>Пользователь:</p>
+
+            <br />
+    
+            <h3 class="title is-3">
+                <%- user.vkontakte.name %>
+            </h3>
+        
+            <p>Друзья:</p>
+
+            <br />
+        
+            <% for (friend of user.vkontakte.friends) { %>
+                <h4 class="title is-4">
+                    <%- friend.first_name + ' ' + friend.last_name %>
+                </h4>
+            <% } %>
+        </p>
+    </div>
+</div>
+
+<br />
+
+<div class="control">
+    <p class="bd-notification">
+        <button class="button is-info is-medium is-fullwidth">
+            <a style= "color: black"
+            href="/destroy">Logout</a>
+        </button>
+    </p>
+</div>
+
+<%- include("partials/footer") %>
