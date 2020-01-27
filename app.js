@@ -35,7 +35,7 @@ const VKontakteStrategy = require('passport-vkontakte').Strategy;
 passport.use(new VKontakteStrategy({
     clientID:     VKONTAKTE_APP_ID, // VK.com docs call it 'API ID', 'app_id', 'api_id', 'client_id' or 'apiId'
     clientSecret: VKONTAKTE_APP_SECRET,
-    callbackURL:  `http://localhost:3000/auth/vkontakte/callback`
+    callbackURL:  `https://young-river-68462.herokuapp.com/auth/vkontakte/callback`
   },
   (accessToken, refreshToken, params, profile, done) => {
     User.findOne({ 'vkontakte.id': profile.id }, async (err, user) => {
